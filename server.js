@@ -4,7 +4,10 @@ const app = express()
 const Flickr = require('flickr-sdk')
 
 app.get('/', (req, res) => {
-    res.setHeader('Access-Control-Allow-Origin', '*')
+    res.setHeader(
+        'Access-Control-Allow-Origin',
+        '*'
+    )
     res.header(
         'Access-Control-Allow-Headers',
         'Origin, X-Requested-With, Content-Type, Accept'
