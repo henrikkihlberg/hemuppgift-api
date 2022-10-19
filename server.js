@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+require('dotenv').config()
 
 const Flickr = require('flickr-sdk')
 
@@ -13,7 +14,7 @@ app.get('/rivers', (req, res) => {
         'Origin, X-Requested-With, Content-Type, Accept'
     )
     const getFlickrPhotos = async () => {
-    const flickr = new Flickr('57024ec69177dc3efff9fb4f22635635')
+    const flickr = new Flickr(process.env.FLICKR_API_KEY)
     flickr.photos.search({
         tags: 'river'
     }).then(function (response) {
@@ -37,7 +38,7 @@ app.get('/forests', (req, res) => {
         'Origin, X-Requested-With, Content-Type, Accept'
     )
     const getFlickrPhotos = async () => {
-    const flickr = new Flickr('57024ec69177dc3efff9fb4f22635635')
+    const flickr = new Flickr(process.env.FLICKR_API_KEY)
     flickr.photos.search({
         tags: 'forest'
     }).then(function (response) {
@@ -61,7 +62,7 @@ app.get('/mountains', (req, res) => {
         'Origin, X-Requested-With, Content-Type, Accept'
     )
     const getFlickrPhotos = async () => {
-    const flickr = new Flickr('57024ec69177dc3efff9fb4f22635635')
+    const flickr = new Flickr(process.env.FLICKR_API_KEY)
     flickr.photos.search({
         tags: 'mountain'
     }).then(function (response) {
@@ -85,7 +86,7 @@ app.get('/nature', (req, res) => {
         'Origin, X-Requested-With, Content-Type, Accept'
     )
     const getFlickrPhotos = async () => {
-    const flickr = new Flickr('57024ec69177dc3efff9fb4f22635635')
+    const flickr = new Flickr(process.env.FLICKR_API_KEY)
     flickr.photos.search({
         tags: 'nature'
     }).then(function (response) {
